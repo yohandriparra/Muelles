@@ -22,7 +22,6 @@ URLS = {
 
 # FUNCION PARA EXTRAER LOS PUERTOS
 def extraer_tabla(driver, selectores, campos, nombre_tabla):
-    print(f"Iniciando extracción de la tabla: {nombre_tabla}")
     datos = []
     tabla = None
 
