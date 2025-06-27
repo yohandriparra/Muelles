@@ -26,14 +26,11 @@ def extraer_tabla(driver, selectores, campos, nombre_tabla):
     tabla = None
 
     for tipo, valor in selectores:
-        print(f"Buscando tabla con selector: {tipo}, valor: {valor}")
         tabla = waitTo(driver, (tipo, valor), time=5)
         if tabla:
-            print(f"Tabla localizada para {nombre_tabla}")
             break
 
     if not tabla:
-        print(f"[WARN] No se encontró la tabla para {nombre_tabla}")
         return [{"mensaje": f"No se encontró la tabla de {nombre_tabla}"}]
 
     driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", tabla)
